@@ -14,6 +14,7 @@
         google-java-format
         checkstyle
         pmd
+        zip
       ];
 
       shellHook = ''
