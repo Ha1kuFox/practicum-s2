@@ -2,10 +2,13 @@ run:
   javac src/fox/haikyo/*.java -d .
   java fox.haikyo.Main
 
-# Упаковать исходники (src), нужные для проверки ДЗ, в один zip-архив
 zip:
   rm -f practicum-s2-src.zip
-  zip -r practicum-s2-src.zip src
+  rm -rf .pkgbuild
+  mkdir -p .pkgbuild/app
+  cp -r src .pkgbuild/app/src
+  cd .pkgbuild && zip -r ../practicum-s2-src.zip app
+  rm -rf .pkgbuild
 
 clean:
   rm -rf fox/
